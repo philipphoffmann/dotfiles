@@ -1,0 +1,26 @@
+[include]
+	path = ~/.gitconfig_local
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore_global
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[help]
+	autocorrect = 1
+[diff]
+	algorithm = histogram
+[grep]
+	lineNumber = true
+[alias]
+	glog = log --graph --decorate --oneline 
+	pruneMerged = ! git fetch --prune && git branch -d $(git branch --merged | grep -v "^* " | grep -v "  master" | grep -v " main")
+	ver = describe --tags
+[push]
+	default = current
+[pull]
+	ff = only
+[commit]
+	template = ~/.git_commit_msg
